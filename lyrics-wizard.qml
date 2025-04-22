@@ -26,8 +26,8 @@ import "DialogBox.js" as DialogBox
 
 MuseScore {
       id: msParent
-      version:  "1.1"
-      description: "Gives options for selecting and moving around lyrics between verses."
+      version:  "1.0"
+      description: "Easily select and move lyrics around between verses."
       menuPath: "Plugins.Lyrics Wizard" // Ignored in MuseScore 4
 
       // These special comments are parsed by MuseScore 4.4, but ignored by older versions:
@@ -129,13 +129,16 @@ MuseScore {
             var pos = v * 40;
             verseList.height += 40
             verseList.implicitHeight += 40
+            var offset = pos;
+            if(mscoreMajorVersion < 4) offset = pos - 6;
+            
             var qmlText = "";
             qmlText += "import QtQuick 2.2\n";
             qmlText += "import MuseScore 3.0\n";
             qmlText += "import QtQuick.Controls 2.2\n";
             qmlText += "CheckBox {\n";
             qmlText += 'text: "Verse ' + (v+1) + '"' + "\n";
-            qmlText += "anchors { top: parent.top; left: parent.left; topMargin: " + (pos - 6) + "; leftMargin: 10 }\n";
+            qmlText += "anchors { top: parent.top; left: parent.left; topMargin: " + offset + "; leftMargin: 10 }\n";
             qmlText += "}\n";
             selectBoxes[v] = Qt.createQmlObject(qmlText, verseList, "addVerse()");
             
