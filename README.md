@@ -26,9 +26,9 @@ contain notes with lyrics, or select just the lyrics themselves.  Then, choose
 
 A window will appear with a list of checkboxes for each verse, and a preview
 of what the lyrics are for each verse within your selection.  Start by checking
-the boxes for the verses you want to manipulate, or click the Select All button
-to select all verses.  (If all verses are already selected, clicking the Select
-All button will deselect them.)
+the boxes for the verses you want to manipulate, or click the "Check All" button
+to select all verses.  (If all verses are already selected, clicking the "Check
+All" button will deselect them.)
 
 To select only the specified verses of lyrics, click the "Select & Close" button.
 This will close the Lyrics Wizard window, leaving only the specified verses
